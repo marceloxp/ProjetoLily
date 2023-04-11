@@ -492,13 +492,14 @@ body {
 
 .gallery {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   background: hsl(283, 8%, 10%);
 }
 
 .gallery__wrapper {
   width: clamp(300px, 100%, 1200px);
+  height: 100%;
   margin: 0 auto;
   padding: 2rem;
   overflow: hidden;
