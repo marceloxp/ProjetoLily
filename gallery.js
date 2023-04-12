@@ -14,4 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var html = compiled(data);
     var container = document.querySelector('#grid-lily');
     container.innerHTML = html;
+
+    lightboxImages();
 });
