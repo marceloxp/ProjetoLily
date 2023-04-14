@@ -20,6 +20,7 @@ html,
 body {
   height: 100%;
   scroll-behavior: smooth;
+
 }
 
 img,
@@ -56,6 +57,8 @@ h6 {
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -445,7 +448,7 @@ body {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  width: clamp(300px, 100%, 1000px);
+  width: clamp(300px, 100%, 1200px);
   color: #fff;
   margin: 0 auto;
   padding: 1rem 2rem;
@@ -578,12 +581,33 @@ body {
   opacity: 1;
 }
 
+.img-lbox__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: clamp(300px, 100%, 650px);
+  height: fit-content;
+  margin: 0 auto;
+}
+
 .lightbox-arrows {
   position: absolute;
+  top: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: clamp(300px, 100%, 650px);
+}
+
+#exit-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: end;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 15px;
 }
 
 /* Add smooth scrolling only for the hero section */
@@ -618,4 +642,19 @@ body {
 .top:hover {
   cursor: pointer;
   background: hsl(287, 47%, 55%);
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+/* =-             N A V I G A T I O N             -= */
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 50px auto 50px;
+  outline: 2px solid hsl(32, 100%, 20%);
+  border: none;
+  border-radius: 20px;
 }
