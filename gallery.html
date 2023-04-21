@@ -1,19 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/52e9ba2d77.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="images/logo-lily.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-  <title>Lily: Explorando o potencial da IA para criar 1000 imagens consistentes com text-to-image</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- HTML -->
+    <title>Projeto Lily: IA criando 1000 imagens autênticas</title>
+    <meta name="title" content="Projeto Lily: IA criando 1000 imagens autênticas">
+    <meta name="description"
+        content="Explore novas formas de expressão visual com a IA no Projeto Lily. 1000 imagens autênticas foram geradas sem uma imagem de base, demonstrando a habilidade de explorar a tecnologia de forma inovadora. Descubra o poder da IA agora!">
+    <meta name="keywords"
+        content="IA, Text-to-image, Tecnologia, Arte, Entretenimento, Jogos, Publicidade, Projeto Lily, Imagens geradas, Expressão visual, Inovação, Experimento, Criatividade">
+
+    <!-- FACEBOOK -->
+    <meta property="og:title" content="Projeto Lily: IA criando 1000 imagens autênticas">
+    <meta property="og:image" content="/images/assets/share.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marceloxp.github.io/ProjetoLily/">
+    <meta property="og:description"
+        content="Explore novas formas de expressão visual com a IA no Projeto Lily. 1000 imagens autênticas foram geradas sem uma imagem de base, demonstrando a habilidade de explorar a tecnologia de forma inovadora. Descubra o poder da IA agora!">
+
+    <!-- GOOGLE PLUS -->
+    <meta itemprop="name" content="Projeto Lily: IA criando 1000 imagens autênticas">
+    <meta itemprop="image" content="/images/assets/share.jpg">
+    <meta itemprop="url" content="https://marceloxp.github.io/ProjetoLily/">
+    <meta itemprop="description"
+        content="Explore novas formas de expressão visual com a IA no Projeto Lily. 1000 imagens autênticas foram geradas sem uma imagem de base, demonstrando a habilidade de explorar a tecnologia de forma inovadora. Descubra o poder da IA agora!">
+
+    <!-- TWITTER -->
+    <meta name="twitter:title" content="Projeto Lily: IA criando 1000 imagens autênticas">
+    <meta name="twitter:image:src" content="/images/assets/share.jpg">
+    <meta name="twitter:site" content="https://marceloxp.github.io/ProjetoLily/">
+    <meta name="twitter:description"
+        content="Explore novas formas de expressão visual com a IA no Projeto Lily. 1000 imagens autênticas foram geradas sem uma imagem de base, demonstrando a habilidade de explorar a tecnologia de forma inovadora. Descubra o poder da IA agora!">
+
+    <script src="https://kit.fontawesome.com/52e9ba2d77.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/logo-lily.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Lily: Explorando o potencial da IA para criar 1000 imagens consistentes com text-to-image</title>
 </head>
 
 <body>
 
-  <script type="text/template" id="item-template">
+    <script type="text/template" id="item-template">
     <% _.each(images, function(obj) { %>
       <li>
         <img style="min-height: 250px; max-height: 520px; width: 100%; object-fit: contain;" class="lightbox-image" src="<%= obj.src %>" loading="lazy" alt="">
@@ -22,46 +57,47 @@
     <% }); %>
   </script>
 
-  <div class="wrapper">
-    <div class="content">
+    <div class="wrapper">
+        <div class="content">
 
-      <header class="header-gallery">
-        <div class="header__wrapper-gallery">
-          <img class="logo__gallery" src="images/logo-lily.png" alt="" loading="lazy">
-          <h2>Galeria</h2>
-          <a class="home" href="index.html"><i class="arrow-gallery fa-solid fa-angle-left"></i>Voltar</a>
+            <header class="header-gallery">
+                <div class="header__wrapper-gallery">
+                    <img class="logo__gallery" src="images/logo-lily.png" alt="" loading="lazy">
+                    <h2>Galeria</h2>
+                    <a class="home" href="index.html"><i class="arrow-gallery fa-solid fa-angle-left"></i>Voltar</a>
+                </div>
+            </header>
+
+            <section class="gallery">
+                <div class="gallery__wrapper">
+                    <ul class="grid" id="grid-lily"></ul>
+                    <!--<a href="#" class="top">Voltar ao Topo</a>-->
+                </div>
+            </section>
+
+            <div id="lightbox">
+                <div class="img-lbox__wrapper">
+                    <button class="lightbox-btn exit-btn" id="exit-image"><i class="fas fa-times"></i></button>
+                    <img src="" alt="imagem">
+                    <div class="lightbox-arrows">
+                        <button class="lightbox-btn previous-btn" id="previous-image"><i
+                                class="fa-solid fa-chevron-left"></i></button>
+                        <button class="lightbox-btn next-btn" id="next-image"><i
+                                class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </header>
-
-      <section class="gallery">
-        <div class="gallery__wrapper">
-          <ul class="grid" id="grid-lily"></ul>
-          <!--<a href="#" class="top">Voltar ao Topo</a>-->
-        </div>
-      </section>
-
-      <div id="lightbox">
-        <div class="img-lbox__wrapper">
-          <button class="lightbox-btn exit-btn" id="exit-image"><i class="fas fa-times"></i></button>
-          <img src="" alt="imagem">
-          <div class="lightbox-arrows">
-            <button class="lightbox-btn previous-btn" id="previous-image"><i
-                class="fa-solid fa-chevron-left"></i></button>
-            <button class="lightbox-btn next-btn" id="next-image"><i class="fa-solid fa-chevron-right"></i></button>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <div class="container"></div>
+    <div class="container"></div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"
-    integrity="sha512-2V49R8ndaagCOnwmj8QnbT1Gz/rie17UouD9Re5WxbzRVUGoftCu5IuqqtAM9+UC3fwfHCSJR1hkzNQh/2wdtg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="gallery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"
+        integrity="sha512-2V49R8ndaagCOnwmj8QnbT1Gz/rie17UouD9Re5WxbzRVUGoftCu5IuqqtAM9+UC3fwfHCSJR1hkzNQh/2wdtg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="gallery.js"></script>
 
 </body>
 
